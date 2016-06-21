@@ -111,6 +111,9 @@ var FoxRunner;
             Level01.prototype.create = function () {
                 this.physics.startSystem(Phaser.Physics.ARCADE);
                 this.background = this.add.sprite(0, 0, 'level01-sprites', 'background');
+                this.moneybag = this.add.sprite(20, 30, 'moneyBag');
+                this.moneybag.animations.add('flap', [0, 1, 2, 3], 5, true);
+                this.moneybag.animations.play('flap');
                 this.player = new Client.Player(this.game, this.world.centerX, this.world.centerX);
                 this.player.anchor.setTo(0, 5);
                 this.game.debug.text("Use Right and Left arrow keys to move the bat", 0, this.world.height, "red");
@@ -169,6 +172,7 @@ var FoxRunner;
                 this.load.image('logo', './assets/ui/gameLogo.png');
                 this.load.audio('click', './assets/sounds/click.ogg', true);
                 this.load.atlasJSONHash('level01-sprites', './assets/sprites/level01-sprites.png', './assets/sprites/level01-sprites.json');
+                this.load.spritesheet('moneyBag', './assets/sprites/MoneyBagSpSh.png', 140, 62);
             };
             Preloader.prototype.create = function () {
                 var tween = this.add.tween(this.loaderText).to({ alpha: 0 }, 2000, Phaser.Easing.Linear.None, true);

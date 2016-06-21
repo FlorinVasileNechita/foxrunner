@@ -14,6 +14,7 @@
             this.load.audio('click', './assets/sounds/click.ogg', true);
 
             this.load.atlasJSONHash('level01-sprites', './assets/sprites/level01-sprites.png', './assets/sprites/level01-sprites.json');
+            this.load.spritesheet('moneyBag', './assets/sprites/MoneyBagSpSh.png',140,62);
         }
 
         create() {
